@@ -54,8 +54,16 @@ public class HeapImplementations
 
     }
 
+    public int leftIndex(int index){
+        return (index * 2 + 1);
+    }
+
+    public int rightIndex(int index){
+        return (index * 2 + 2);
+    }
+
     //Given an array heap and the heap level, finds largest Node
-    public static void maxHeap(int [] input, int subHeap) {
+    public static void maxHeap(int [] input, int rootIndex) {
         leftNode = 2 * subHeap;
         rightNode = 2 * subHeap + 1;
         largestNode = subHeap; //initialize largestNode as subheap first
