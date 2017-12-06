@@ -12,10 +12,10 @@ public class HeapImplementations
     private static int largestNode;
 
     public static void main(String[] args){
-        int [] a1={3,5,1,2,4};
-        heapSort(a1);
-        for (int i=0; i<a1.length; i++){
-            System.out.print(a1[i] + " ");
+        int [] heap = {3,5,1,2,4};
+        heapSort(heap);
+        for (int i=0; i<heap.length; i++){
+            System.out.print(heap[i] + " ");
         }
     }
 
@@ -55,24 +55,24 @@ public class HeapImplementations
     }
 
     public int leftIndex(int index){
-        return (index * 2 + 1);
+        return (index * 2 );
     }
 
     public int rightIndex(int index){
-        return (index * 2 + 2);
+        return (index * 2 + 1);
     }
 
     //Given an array heap and the heap level, finds largest Node
-    public static void maxHeap(int [] input, int rootIndex) {
+    public static void maxHeap(int [] input, int subHeap) {
         leftNode = 2 * subHeap;
         rightNode = 2 * subHeap + 1;
         largestNode = subHeap; //initialize largestNode as subheap first
 
         if ((leftNode <= size))
-            if((heap[leftNode] > heap[subHeap]))
+            if((input[leftNode] > input[subHeap]))
               largestNode = leftNode;
         if ((rightNode <= size))
-            if((heap[rightNode] > heap[largestNode]))
+            if((input[rightNode] > input[largestNode]))
                 largestNode = rightNode;
 
         if (largestNode != subHeap) {

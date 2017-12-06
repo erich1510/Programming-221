@@ -18,7 +18,7 @@ public class BST {
 	emptyTree = true;
 	nodeValue = 0;
 	leftChild = null;
-		rightChild = null;
+	rightChild = null;
     }
 
         
